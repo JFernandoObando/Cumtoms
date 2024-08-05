@@ -31,13 +31,7 @@ const routes: Routes = [
       {
         path: 'sample-page',
         loadComponent: () => import('./demo/other/sample-page/sample-page.component')
-      }
-    ]
-  },
-  {
-    path: '',
-    component: GuestComponent,
-    children: [
+      },
       {
         path: 'login',
         loadComponent: () => import('./demo/authentication/login/login.component')
@@ -46,6 +40,21 @@ const routes: Routes = [
         path: 'register',
         loadComponent: () => import('./demo/authentication/register/register.component')
       }
+    ]
+  },
+  {
+    //cargar rutas completas
+    path: '',
+    component: GuestComponent,
+    children: [
+      // {
+      //   path: 'login',
+      //   loadComponent: () => import('./demo/authentication/login/login.component')
+      // },
+      // {
+      //   path: 'register',
+      //   loadComponent: () => import('./demo/authentication/register/register.component')
+      // }
     ]
   }
 ];
