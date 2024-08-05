@@ -49,8 +49,8 @@ export const NavigationItems: NavigationItem[] = [
         classes: 'nav-item',
         url: '/login',
         icon: 'login',
-        target: true,
-        breadcrumbs: false
+        // target: true,
+        // breadcrumbs: false
       },
       {
         id: 'register',
@@ -59,8 +59,8 @@ export const NavigationItems: NavigationItem[] = [
         classes: 'nav-item',
         url: '/register',
         icon: 'profile',
-        target: true,
-        breadcrumbs: false
+        // target: true,
+        // breadcrumbs: false
       }
     ]
   },
