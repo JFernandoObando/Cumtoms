@@ -1,0 +1,24 @@
+/* roles.component.scss */
+.form-container {
+    max-width: 800px; // Aumenta el ancho máximo del contenedor
+    width: 100%; // Ancho completo del contenedor padre
+    margin: 0 auto; // Centra el contenedor horizontalmente
+    padding: 30px; // Espaciado interno
+    border: 1px solid #ddd; // Borde del contenedor
+    border-radius: 8px; // Bordes redondeados
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra del contenedor
+    background-color: #fff; // Fondo blanco para el contenedor
+  
+    @media (max-width: 768px) {
+      padding: 20px; // Reduce el espaciado interno en pantallas más pequeñas
+    }
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem; // Espaciado entre campos del formulario
+  }
+  
+  button {
+    width: 100%; // Botón toma el ancho completo del contenedor del formulario
+  }
+  
