@@ -14,4 +14,9 @@ class Roles extends Model
 
     // Define los campos que pueden ser asignados en masa
     protected $fillable = ['role_code', 'role_name'];
+
+    public function users(): HasMany
+    {
+        return $this->hasMany(User::class, 'role_id');
+    }
 }

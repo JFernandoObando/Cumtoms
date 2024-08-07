@@ -24,7 +24,16 @@ class User extends Authenticatable implements JWTSubject
         'email',
         'surname',
         'password',
+        'role_id',
     ];
+
+     /**
+     * Get the role that owns the user.
+     */
+    public function role(): BelongsTo
+    {
+        return $this->belongsTo(Roles::class, 'role_id');
+    }
 
     /**
      * The attributes that should be hidden for serialization.
