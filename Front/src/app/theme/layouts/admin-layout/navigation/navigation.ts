@@ -49,8 +49,8 @@ export const NavigationItems: NavigationItem[] = [
         classes: 'nav-item',
         url: '/login',
         icon: 'login',
-        target: true,
-        breadcrumbs: false
+        // target: true,
+        // breadcrumbs: false
       },
       {
         id: 'register',
@@ -59,8 +59,8 @@ export const NavigationItems: NavigationItem[] = [
         classes: 'nav-item',
         url: '/register',
         icon: 'profile',
-        target: true,
-        breadcrumbs: false
+        // target: true,
+        // breadcrumbs: false
       }
     ]
   },
@@ -122,6 +122,22 @@ export const NavigationItems: NavigationItem[] = [
         icon: 'question',
         target: true,
         external: true
+      }
+    ]
+  },
+  {
+    id: 'settings',
+    title: 'Configuraciones',
+    type: 'group',
+    icon: 'setting',  // Puedes cambiar el icono a uno que se ajuste a "Configuraciones"
+    children: [
+      {
+        id: 'roles',
+        title: 'Roles',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/roles',
+        icon: 'team'  // Icono para "Roles"
       }
     ]
   }

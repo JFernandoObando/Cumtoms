@@ -5,6 +5,7 @@ import LoginComponent from './demo/authentication/login/login.component';
 // Project import
 import { AdminComponent } from './theme/layouts/admin-layout/admin-layout.component';
 import { GuestComponent } from './theme/layouts/guest/guest.component';
+import { RolesComponent } from './settings/roles/roles.component';
 
 const routes: Routes = [
   {
@@ -31,13 +32,7 @@ const routes: Routes = [
       {
         path: 'sample-page',
         loadComponent: () => import('./demo/other/sample-page/sample-page.component')
-      }
-    ]
-  },
-  {
-    path: '',
-    component: GuestComponent,
-    children: [
+      },
       {
         path: 'login',
         loadComponent: () => import('./demo/authentication/login/login.component')
@@ -45,7 +40,26 @@ const routes: Routes = [
       {
         path: 'register',
         loadComponent: () => import('./demo/authentication/register/register.component')
+      }, 
+      {
+        path: 'roles', // Añade esta ruta para los roles
+        component: RolesComponent
       }
+    ]
+  },
+  {
+    //cargar rutas completas
+    path: '',
+    component: GuestComponent,
+    children: [
+      // {
+      //   path: 'login',
+      //   loadComponent: () => import('./demo/authentication/login/login.component')
+      // },
+      // {
+      //   path: 'register',
+      //   loadComponent: () => import('./demo/authentication/register/register.component')
+      // }
     ]
   }
 ];
