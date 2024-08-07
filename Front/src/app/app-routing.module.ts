@@ -5,6 +5,7 @@ import LoginComponent from './demo/authentication/login/login.component';
 // Project import
 import { AdminComponent } from './theme/layouts/admin-layout/admin-layout.component';
 import { GuestComponent } from './theme/layouts/guest/guest.component';
+import { RolesComponent } from './settings/roles/roles.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
       {
         path: 'register',
         loadComponent: () => import('./demo/authentication/register/register.component')
+      }, 
+      {
+        path: 'roles', // Añade esta ruta para los roles
+        component: RolesComponent
       }
     ]
   },

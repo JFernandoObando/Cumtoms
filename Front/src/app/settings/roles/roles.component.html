@@ -1,0 +1,20 @@
+<div class="container mt-4">
+    <div class="form-container">
+      <form (ngSubmit)="onSubmit()" #roleForm="ngForm">
+        <div class="form-group mb-3">
+          <label for="roleCode">Código de Rol:</label>
+          <input type="text" id="roleCode" name="roleCode" [(ngModel)]="roleCode" class="form-control" placeholder="Código de Rol" required>
+        </div>
+        
+        <div class="form-group mb-3">
+          <label for="roleName">Nombre de Rol:</label>
+          <input type="text" id="roleName" name="roleName" [(ngModel)]="roleName" class="form-control" placeholder="Nombre de Rol" required>
+        </div>
+        
+        <div class="d-grid mt-3">
+          <button type="submit" class="btn btn-primary">Crear Rol</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

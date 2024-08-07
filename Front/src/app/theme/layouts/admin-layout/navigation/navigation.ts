@@ -124,5 +124,21 @@ export const NavigationItems: NavigationItem[] = [
         external: true
       }
     ]
+  },
+  {
+    id: 'settings',
+    title: 'Configuraciones',
+    type: 'group',
+    icon: 'setting',  // Puedes cambiar el icono a uno que se ajuste a "Configuraciones"
+    children: [
+      {
+        id: 'roles',
+        title: 'Roles',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/roles',
+        icon: 'team'  // Icono para "Roles"
+      }
+    ]
   }
 ];
