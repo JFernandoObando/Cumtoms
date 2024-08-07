@@ -1,0 +1,35 @@
+<div _ngcontent-ng-c3689338671="" class="col-md-12 col-xl-8">
+  <div _ngcontent-ng-c3689338671="" class="card tbl-card">
+    <div _ngcontent-ng-c3689338671="" class="table-responsive">
+      <table _ngcontent-ng-c3689338671="" class="table table-hover mb-0">
+        <thead _ngcontent-ng-c3689338671="">
+          <tr _ngcontent-ng-c3689338671="">
+            <th _ngcontent-ng-c3689338671="">Nombre</th>
+            <th _ngcontent-ng-c3689338671="">Apellido</th>
+            <th _ngcontent-ng-c3689338671="">Email</th>
+            <th _ngcontent-ng-c3689338671="">Acción</th>
+          </tr>
+        </thead>
+        <tbody _ngcontent-ng-c3689338671="">
+            <tr *ngFor="let user of users">
+                <td><a href="javascript:" class="text-muted">{{ user.name }}</a></td>
+                <td>{{ user.surname }}</td>
+                <td>
+                  <span class="d-block">
+                    <i class="badge-circle bg-danger f-10 m-r-5"></i>
+                    {{ user.email }}
+                  </span>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary me-2" (click)="editUser(user.id)">Editar</button>
+                    <button type="button" class="btn btn-danger" (click)="deleteUser(user.id)">Eliminar</button>
+                  </td>
+                  
+              </tr>
+        
+          <!--container-->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

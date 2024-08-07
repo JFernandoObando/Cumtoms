@@ -42,16 +42,16 @@ export const NavigationItems: NavigationItem[] = [
     type: 'group',
     icon: 'icon-navigation',
     children: [
-      {
-        id: 'login',
-        title: 'Login',
-        type: 'item',
-        classes: 'nav-item',
-        url: '/login',
-        icon: 'login',
-        // target: true,
-        // breadcrumbs: false
-      },
+      // {
+      //   id: 'login',
+      //   title: 'Login',
+      //   type: 'item',
+      //   classes: 'nav-item',
+      //   url: '/login',
+      //   icon: 'login',
+      //   // target: true,
+      //   // breadcrumbs: false
+      // },
       {
         id: 'register',
         title: 'Register',
@@ -59,6 +59,16 @@ export const NavigationItems: NavigationItem[] = [
         classes: 'nav-item',
         url: '/register',
         icon: 'profile',
+        // target: true,
+        // breadcrumbs: false
+      },
+      {
+        id: 'register',
+        title: 'Usuarios',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/user',
+        icon: 'user',
         // target: true,
         // breadcrumbs: false
       }
