@@ -51,8 +51,7 @@ export default class LoginComponent {
         return;
       }
       if(resp == true){
-        console.log("welcome")
-        
+        this.router.navigateByUrl("/dashboard/default");
         setTimeout(() => {
           this.router.navigateByUrl("/dashboard/default");
         }, 500);

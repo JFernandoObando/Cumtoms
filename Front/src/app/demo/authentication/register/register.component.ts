@@ -42,7 +42,7 @@ export default class RegisterComponent {
 
   register(){
     if (!this.name || !this.surname || !this.email ! || !this.password) {
-      console.log("Ingrese todos los campos")
+      alert('Ingrese todos los campos');
       return;
     }
     let data = {
@@ -53,7 +53,8 @@ export default class RegisterComponent {
     }
     this.authService.register(data).subscribe((resp:any) => {
       console.log(resp);
-      console.log("usuario creado")
+      alert('Usuario registrado correctamente');
+      this.router.navigate(['/user']);
     })
   }
 }

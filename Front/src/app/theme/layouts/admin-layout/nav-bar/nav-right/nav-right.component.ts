@@ -1,6 +1,6 @@
 // angular import
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouteReuseStrategy, RouterModule } from '@angular/router';
 
 // project import
 import { SharedModule } from 'src/app/theme/shared/shared.module';
@@ -28,6 +28,7 @@ import {
   ArrowRightOutline,
   GithubOutline
 } from '@ant-design/icons-angular/icons';
+import { AuthService } from 'src/app/demo/authentication/service/auth.service';
 
 @Component({
   selector: 'app-nav-right',
@@ -42,7 +43,10 @@ export class NavRightComponent {
   windowWidth: number;
   screenFull: boolean = true;
 
-  constructor(private iconService: IconService) {
+  constructor(private iconService: IconService,
+              private authservice:AuthService,
+              private route: Router,
+  ) {
     this.windowWidth = window.innerWidth;
     this.iconService.addIcon(
       ...[
@@ -108,4 +112,9 @@ export class NavRightComponent {
       title: 'History'
     }
   ];
+
+  logout(){
+    this.authservice.logout();
+    this.route.navigate(['/user']);
+  }
 }
