@@ -7,6 +7,12 @@
   <div class="form-group mb-3">
     <input type="text" class="form-control"  [(ngModel)]="user.email" id="email" placeholder="email" style="width: 250px; margin: 0 auto;">
   </div>
+  <div class="form-group mb-3">
+    <select class="form-control" style="width: 250px; margin: 0 auto;" id="role" [(ngModel)]="user.role_id" name="role_id" required>
+      <option *ngIf="!roles.length" value="">Cargando...</option> 
+      <option *ngFor="let role of roles" [value]="role.id">{{ role.role_name }}</option>
+    </select>
+  </div>
   <div class="d-grid mt-3">
     <button type="button" (click)="editUser()" class="btn btn-primary" style="width: 250px; margin: 0 auto;">Editar</button>
   </div>

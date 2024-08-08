@@ -4,6 +4,7 @@ import { UserService } from 'src/app/services/user.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { switchMap } from 'rxjs';
+import { AuthService } from 'src/app/demo/authentication/service/auth.service';
 
 @Component({
   selector: 'app-user-edit',
@@ -12,16 +13,22 @@ import { switchMap } from 'rxjs';
   templateUrl: './user-edit.component.html',
   styleUrl: './user-edit.component.scss'
 })
+
+
 export class UserEditComponent {
   user: any = {
     name: '',
     surname: '',
-    email: ''
+    email: '',
+    role_id:null,
   };
+  roles: any[] = [];
+  role_id:null;
 
   constructor(
     private userService: UserService,
     private route: Router,
+    private authService: AuthService,
     private router:ActivatedRoute,
   ){
     
@@ -29,6 +36,7 @@ export class UserEditComponent {
 
   ngOnInit(): void {
     this.loadUser();
+    this.getRoleId();
   }
 
   loadUser(): void {
@@ -50,15 +58,24 @@ export class UserEditComponent {
     const userData = {
       name: this.user.name,
       surname: this.user.surname,
-      email: this.user.email
+      email: this.user.email,
+      role_id: this.user.role_id, 
     };
     this.userService.updateUser(userId, userData).subscribe({
       next: response => {
-        alert('Usuario editado corretamente');
+        alert('Usuario editado correctamente');
         this.route.navigate(['/user']); 
       },
       error: err => alert('Error al actualizar el usuario')
     });
+  }
+  
+  getRoleId(){
+    this.authService.getRoleId().subscribe((data:any) => {
+      this.roles = data;
+    }, error => {
+      console.error('Error al traer los roles', error)
+    })
   }
   
 }
