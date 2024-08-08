@@ -4,6 +4,8 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,3 +30,6 @@ Route::group(['prefix' => 'auth'], function ($router) {
     Route::post('/me', [AuthController::class, 'me'])->name('me');
 });
 Route::post('/roles', [RoleController::class, 'store']);
+
+//rutas user
+Route::apiResource('users', UserController::class);

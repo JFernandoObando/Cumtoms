@@ -1,0 +1,12 @@
+<div class="form-group mb-3" *ngIf="user">
+    <input type="text" class="form-control" [(ngModel)]="user.name" id="name" placeholder="Nombre" style="width: 250px; margin: 0 auto;">
+  </div>
+  <div class="form-group mb-3">
+    <input type="text" class="form-control"  [(ngModel)]="user.surname" id="surname" placeholder="Apellido" style="width: 250px; margin: 0 auto;">
+  </div>
+  <div class="form-group mb-3">
+    <input type="text" class="form-control"  [(ngModel)]="user.email" id="email" placeholder="email" style="width: 250px; margin: 0 auto;">
+  </div>
+  <div class="d-grid mt-3">
+    <button type="button" (click)="editUser()" class="btn btn-primary" style="width: 250px; margin: 0 auto;">Editar</button>
+  </div>
