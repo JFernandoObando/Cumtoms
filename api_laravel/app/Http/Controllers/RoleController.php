@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
+    public function index(){
+        $role = Roles::all();
+        return response()->json($role);
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -20,4 +25,6 @@ class RoleController extends Controller
 
         return response()->json(['message' => 'Rol creado exitosamente'], 201);
     }
+
+   
 }

@@ -7,6 +7,7 @@
             <th _ngcontent-ng-c3689338671="">Nombre</th>
             <th _ngcontent-ng-c3689338671="">Apellido</th>
             <th _ngcontent-ng-c3689338671="">Email</th>
+            <th _ngcontent-ng-c3689338671="">Rol</th>
             <th _ngcontent-ng-c3689338671="">Acción</th>
           </tr>
         </thead>
@@ -20,6 +21,14 @@
                     {{ user.email }}
                   </span>
                 </td>
+                <td>
+                  <span class="d-block">
+                    <i class="badge-circle bg-danger f-10 m-r-5"></i>
+                    <ng-container *ngIf="user.role_id === 1">Administrador</ng-container>
+                    <ng-container *ngIf="user.role_id === 2">Vendedor</ng-container>
+                  </span>
+                </td>
+                
                 <td>
                     <button type="button" class="btn btn-primary me-2" (click)="editUser(user.id)">Editar</button>
                     <button type="button" class="btn btn-danger" (click)="deleteUser(user.id)">Eliminar</button>
