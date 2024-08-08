@@ -148,6 +148,14 @@ export const NavigationItems: NavigationItem[] = [
         classes: 'nav-item',
         url: '/roles',
         icon: 'team'  // Icono para "Roles"
+      },
+      {
+        id: 'roles-table',
+        title: 'Tabla de roles',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/roles-table',
+        icon: 'team'  // Icono para "Roles"
       }
     ]
   }

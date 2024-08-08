@@ -34,16 +34,26 @@ class UserController extends Controller
     }
 }
 
-    public function edit(string $id)
-    {
-        //
-    }
-    public function update(Request $request, $id)
-    {
-        $user = User::find($id);
-        $user->update($request->all());
-        return response()->json($user);
-    }
+public function update(Request $request, $id)
+{
+    // Validar los datos de la solicitud
+    $validatedData = $request->validate([
+        'name' => 'required|string|max:255',
+        'surname' => 'required|string|max:255',
+        'email' => 'required|email|max:255|unique:users,email,' . $id,
+        'role_id' => 'nullable|exists:roles,id',
+    ]);
+
+    // Encontrar al usuario por ID
+    $user = User::findOrFail($id);
+
+    // Actualizar el usuario con los datos validados
+    $user->update($validatedData);
+
+    // Retornar la respuesta JSON con el usuario actualizado
+    return response()->json($user);
+}
+
 
     public function destroy(string $id)
     {
