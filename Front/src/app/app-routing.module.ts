@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -54,7 +54,21 @@ const routes: Routes = [
       {
         path: 'user-delete/:id',
         loadComponent: () => import('./settings/user-delete/user-delete.component').then(m => m.UserDeleteComponent)
-      }, 
+      },  
+      {
+        path: 'roles-table',
+        loadComponent: () => import('./settings/roles-table/roles-table.component').then(m => m.RolesTableComponent)
+      }
+      , 
+      {
+        path: 'roles-edit/:id',
+        loadComponent: () => import('./settings/roles-edit/roles-edit.component').then(m => m.RolesEditComponent)
+      }
+      , 
+      {
+        path: 'roles-delete/:id',
+        loadComponent: () => import('./settings/roles-delete/roles-delete.component').then(m => m.RolesDeleteComponent)
+      }
     ]
   },
   {

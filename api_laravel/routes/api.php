@@ -34,3 +34,8 @@ Route::post('/roles', [RoleController::class, 'store']);
 
 //rutas user
 Route::apiResource('users', UserController::class);
+//ROLES
+Route::get('/roles', [RoleController::class, 'index']);
+Route::get('/roles/{id}', [RoleController::class, 'show']);
+Route::put('/roles/{id}', [RoleController::class, 'update']);
+Route::delete('/roles/{id}', [RoleController::class, 'destroy']);

@@ -26,5 +26,57 @@ class RoleController extends Controller
         return response()->json(['message' => 'Rol creado exitosamente'], 201);
     }
 
-   
+    // Obtener todos los roles
+    public function index()
+    {
+        $roles = Roles::all();
+        return response()->json($roles);
+    }
+
+     // Obtener un rol por ID
+     public function show($id)
+     {
+         $role = Role::find($id);
+ 
+         if ($role) {
+             return response()->json($role);
+         } else {
+             return response()->json(['message' => 'Role not found'], 404);
+         }
+     }
+
+     // Actualizar un rol existente
+    public function update(Request $request, $id)
+    {
+        $role = Role::find($id);
+
+        if ($role) {
+            $request->validate([
+                'code' => 'required|string|max:255',
+                'name' => 'required|string|max:255',
+            ]);
+
+            $role->update([
+                'code' => $request->code,
+                'name' => $request->name,
+            ]);
+
+            return response()->json($role);
+        } else {
+            return response()->json(['message' => 'Role not found'], 404);
+        }
+    }
+
+    // Eliminar un rol
+    public function destroy($id)
+    {
+        $role = Role::find($id);
+
+        if ($role) {
+            $role->delete();
+            return response()->json(['message' => 'Role deleted successfully']);
+        } else {
+            return response()->json(['message' => 'Role not found'], 404);
+        }
+    }
 }

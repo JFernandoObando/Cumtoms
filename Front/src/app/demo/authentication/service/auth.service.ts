@@ -30,7 +30,9 @@ export class AuthService {
 
   login(email:string, password:string){
     let URL= URL_SERVICIOS+"/auth/login";
+    
     return this.http.post(URL,{email,password}).pipe(
+  
       map((resp:any) => {
         console.log(resp);
         const result = this.saveLocalStorage(resp);
