@@ -8,7 +8,7 @@ import { RoleService } from 'src/app/services/role.service';
   templateUrl: './roles.component.html',
   styleUrls: ['./roles.component.scss']
 })
-
+// sad
 export class RolesComponent {
   roleCode: string = '';
   roleName: string = '';
