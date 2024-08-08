@@ -8,6 +8,12 @@
   <input type="text" class="form-control" [(ngModel)]="email" id="email" placeholder="email" style="width: 250px; margin: 0 auto;">
 </div>
 <div class="form-group mb-3">
+  <select class="form-control" [(ngModel)]="role_id" style="width: 250px; margin: 0 auto;">
+    <option value="" disabled selected>Selecciona un rol</option>
+    <option *ngFor="let role of roles" [value]="role.id">{{ role.role_name }}</option>
+  </select>
+</div>
+<div class="form-group mb-3">
   <input type="password" class="form-control" [(ngModel)]="password" id="password" placeholder="Password" style="width: 250px; margin: 0 auto;">
 </div>
 <div class="d-grid mt-3">

@@ -29,6 +29,7 @@ Route::group(['prefix' => 'auth'], function ($router) {
     Route::post('/refresh', [AuthController::class, 'refresh'])->name('refresh');
     Route::post('/me', [AuthController::class, 'me'])->name('me');
 });
+Route::get('/roles',[RoleController::class, 'index']);
 Route::post('/roles', [RoleController::class, 'store']);
 
 //rutas user

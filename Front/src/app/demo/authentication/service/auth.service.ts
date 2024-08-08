@@ -68,4 +68,9 @@ export class AuthService {
     }, 500);
     
   }
+
+  getRoleId(){
+    let URL= URL_SERVICIOS+"/roles";
+    return this.http.get(URL);
+  }
 }
